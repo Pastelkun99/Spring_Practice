@@ -1,0 +1,8 @@
+package test.exam3;
+
+public class JdbcDao {
+
+	public void insert() {
+		System.out.println("추가");
+	}
+}
