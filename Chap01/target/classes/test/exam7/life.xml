@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 객체의 생성과 소멸 시 특정 메소드를 실행시키고 싶은 경우
+	init-method : 커스텀 초기화 메서드
+	destroy-method : 커스텀 소멸 메서드 -->
+	
+	<bean id="lifeBean" class="test.exam7.LifeBeanImpl" init-method="begin" destroy-method="destroy"></bean>
+	
+</beans>
