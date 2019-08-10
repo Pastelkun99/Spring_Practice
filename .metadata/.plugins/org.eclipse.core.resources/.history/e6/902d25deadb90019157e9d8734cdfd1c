@@ -1,7 +1,0 @@
-package test.exam3;
-
-public class JdbcService {
-
-	JdbcDao jdbcDao;
-	
-}

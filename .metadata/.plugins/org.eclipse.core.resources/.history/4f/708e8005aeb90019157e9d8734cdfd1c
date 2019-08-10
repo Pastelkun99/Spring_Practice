@@ -1,9 +1,0 @@
-package test.exam3;
-
-public class ExamMain {
-
-	public static void main(String[] args) {
-
-	}
-
-}
