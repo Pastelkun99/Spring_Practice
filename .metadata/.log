@@ -3472,3 +3472,52 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2019-08-12 20:51:23.240
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.ide.eclipse.xml.namespaces 4 0 2019-08-12 20:59:52.393
+!MESSAGE Plugin.internal_error
+!STACK 0
+java.util.zip.ZipException: invalid entry CRC (expected 0x2d948e21 but got 0x6025db35)
+	at java.util.zip.ZipInputStream.readEnd(Unknown Source)
+	at java.util.zip.ZipInputStream.read(Unknown Source)
+	at java.util.zip.ZipInputStream.closeEntry(Unknown Source)
+	at java.util.zip.ZipInputStream.getNextEntry(Unknown Source)
+	at org.springframework.ide.eclipse.xml.namespaces.classpath.FilteringURLResourceLoader.fetchResourceFromZip(FilteringURLResourceLoader.java:241)
+	at org.springframework.ide.eclipse.xml.namespaces.classpath.FilteringURLResourceLoader.buildIndex(FilteringURLResourceLoader.java:166)
+	at org.springframework.ide.eclipse.xml.namespaces.classpath.FilteringURLResourceLoader.ensureIndexed(FilteringURLResourceLoader.java:137)
+	at org.springframework.ide.eclipse.xml.namespaces.classpath.FilteringURLResourceLoader.getResourcesCollection(FilteringURLResourceLoader.java:102)
+	at org.springframework.ide.eclipse.xml.namespaces.classpath.FilteringURLResourceLoader.lambda$1(FilteringURLResourceLoader.java:258)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:47)
+	at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:6877)
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onComplete(FluxConcatArray.java:208)
+	at reactor.core.publisher.FluxConcatArray.subscribe(FluxConcatArray.java:81)
+	at reactor.core.publisher.MonoReduceSeed.subscribe(MonoReduceSeed.java:65)
+	at reactor.core.publisher.Mono.block(Mono.java:1182)
+	at org.springframework.ide.eclipse.xml.namespaces.classpath.PropertiesLoaderUtils.loadAllProperties(PropertiesLoaderUtils.java:88)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathUriResolver.getSchemaMappings(ProjectClasspathUriResolver.java:201)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathUriResolver.init(ProjectClasspathUriResolver.java:123)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathUriResolver.<init>(ProjectClasspathUriResolver.java:55)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathExtensibleUriResolver$1.call(ProjectClasspathExtensibleUriResolver.java:167)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathExtensibleUriResolver$1.call(ProjectClasspathExtensibleUriResolver.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathExtensibleUriResolver.getProjectResolver(ProjectClasspathExtensibleUriResolver.java:182)
+	at org.springframework.ide.eclipse.xml.namespaces.internal.ProjectClasspathExtensibleUriResolver.resolve(ProjectClasspathExtensibleUriResolver.java:111)
+	at org.eclipse.wst.common.uriresolver.internal.ExtensibleURIResolver.resolve(ExtensibleURIResolver.java:86)
+	at org.eclipse.wst.xml.core.internal.modelquery.XMLCatalogIdResolver.resolve(XMLCatalogIdResolver.java:94)
+	at org.eclipse.wst.xml.core.internal.modelquery.XMLModelQueryAssociationProvider.resolveGrammarURI(XMLModelQueryAssociationProvider.java:60)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.XMLAssociationProvider.resolveGrammarURI(XMLAssociationProvider.java:170)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.CMDocumentManagerImpl.lookupOrCreateResolvedURI(CMDocumentManagerImpl.java:124)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.CMDocumentManagerImpl.addCMDocumentReference(CMDocumentManagerImpl.java:206)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.CMDocumentLoader.handleGrammar(CMDocumentLoader.java:226)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.CMDocumentLoader$CMDocumentLoadingNamespaceTable.addElement(CMDocumentLoader.java:301)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.CMDocumentLoader.loadCMDocuments(CMDocumentLoader.java:131)
+	at org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.InferredGrammarBuildingCMDocumentLoader.loadCMDocuments(InferredGrammarBuildingCMDocumentLoader.java:58)
+	at org.eclipse.wst.xml.ui.internal.DOMObserver.invokeCMDocumentLoad(DOMObserver.java:216)
+	at org.eclipse.wst.xml.ui.internal.DOMObserver$TimerJob.run(DOMObserver.java:147)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-08-12 21:02:23.587
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-08-12 21:02:23.612
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!

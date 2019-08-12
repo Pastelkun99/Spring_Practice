@@ -18,8 +18,8 @@
 	<br>
 	<br>
 	<table border="1" bordercolor="blue" width="800", height="300" align="left" >
-		<th>사진</th>
-		<th>이름</th>
+		<th align="center">사진</th>
+		<th align="center">이름</th>
 		<tr>
 			<td align="center"><img src="https://pbs.twimg.com/media/C52c7IwU8AAhMss.jpg" width="500" height="180"></td>
 			<td align="center"><a href="Assultrifle/ar15taranTactical">AR-15 타란 택티컬</a></td>

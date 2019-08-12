@@ -25,7 +25,6 @@
 <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.NoHandlerFoundException"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ControllerAdvice"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="org.zerock.service.BoardServiceImpl"/>
@@ -38,13 +37,11 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.zerock.mapper.BoardMapper"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
 <fullyQualifiedTypeName name="org.zerock.service.BoardService"/>
 <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
 <fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner"/>
 <fullyQualifiedTypeName name="org.springframework.test.context.web.WebAppConfiguration"/>
-<fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
 <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
 <fullyQualifiedTypeName name="lombok.Setter"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
@@ -59,5 +56,8 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 </qualifiedTypeNameHistroy>
