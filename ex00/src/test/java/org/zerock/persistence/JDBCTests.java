@@ -1,4 +1,4 @@
-package org.zerock.presistence;
+package org.zerock.persistence;
 
 import static org.junit.Assert.fail;
 
@@ -16,7 +16,7 @@ public class JDBCTests {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (Exception e) {
-			e.printStackTrace();  
+			e.printStackTrace();
 		}
 	}
 
