@@ -20,14 +20,19 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/G18C", method = RequestMethod.GET)
+	@RequestMapping(value = "/Pistol", method = RequestMethod.GET)
 	public String G18C() {
-		return "G18C";
+		return "Pistol";
 	}
 	
-	@RequestMapping(value = "/assultrifle", method = RequestMethod.GET)
-	public String assultrifle() {
-		return "assultrifle";
+	@RequestMapping(value = "/Assultrifle", method = RequestMethod.GET)
+	public String Assultrifle() {
+		return "Assultrifle";
+	}
+	
+	@RequestMapping(value = "/Shotgun", method = RequestMethod.GET)
+	public String Shotgun() {
+		return "Shotgun";
 	}
 	
 	
