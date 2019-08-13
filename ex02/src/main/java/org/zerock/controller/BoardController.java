@@ -27,7 +27,7 @@ public class BoardController {
 	public void list(Model model) {
 		log.info("list");
 		List<BoardVO> list = service.getList();
-		
+		log.info(list);
 		model.addAttribute("list", list);
 	}
 	
@@ -39,23 +39,43 @@ public class BoardController {
 		model.addAttribute("list2", list);
 	}
 	
+	@GetMapping("/register")
+	public String registerGet() {
+		System.out.println("등록화면");
+		return "/board/register";
+	}
+	
 	@PostMapping("/register")		// 글쓰기
 	public String register(BoardVO board, RedirectAttributes rttr) {
 		System.out.println("등록 : " + board);
 		
 		service.register(board);
 		rttr.addFlashAttribute("result", board.getBno());
+		// 리다이렉트 할때 addFlashArrtibute 사용함
 		
 		return "redirect:/board/list";
 	}
 	
+	
+	
 	@GetMapping("/get")			//글읽기
 	public void get(@RequestParam("bno") int bno, Model model) {
 		System.out.println("/get");
-		model.addAttribute("board", service.get(bno));
+		
+		BoardVO board = service.get(bno);
+		
+		model.addAttribute("board", board);
 	}
 	
-	@PostMapping("/modify")		//글 수정
+	@GetMapping("/modify") // 글수정화면
+	public void modifyget(@RequestParam("bno") int bno, Model model) {
+		System.out.println("수정화면");
+		
+		BoardVO board = service.get(bno);
+		model.addAttribute("board", board);
+	}
+	
+	@PostMapping("/modify")		//글 수정 처리
 	public String modify(BoardVO board, RedirectAttributes rttr) {
 		System.out.println("수정 : " + board);
 		
@@ -72,5 +92,10 @@ public class BoardController {
 			rttr.addAttribute("result", "success");
 		}
 		return "redirect:/board/list";
+	}
+	
+	@RequestMapping("/layout")
+	public String layout() {
+		return "/board/layout";
 	}
 }
