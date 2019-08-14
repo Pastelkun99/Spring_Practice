@@ -1,3 +1,5 @@
+<!-- views폴더 아래의 board.jsp -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -13,7 +15,8 @@
 		<c:forEach var="map" items="${list}">
 			<tr>
 				<td>${map.BRD_NO }</td>
-				<td>${map.BRD_TITLE }</td>
+				<td><a href="boardc.do?no=${map.BRD_NO}">${map.BRD_TITLE }</a></td>
+				<!-- no 값이 parameter가 된다 -->
 				<td>${map.BRD_WRITER }</td>
 				<td>${map.BRD_HIT }</td>
 				<td>${map.BRD_DATE }</td>

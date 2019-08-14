@@ -14,7 +14,7 @@ public class BoardDAO implements BoardService {
 	
 	//mapper 객체 <= mybatis-context.xml의 마지막 bean객체
 	@Autowired
-	@Resource(name = "sqlSession")
+	//@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
 
@@ -37,10 +37,16 @@ public class BoardDAO implements BoardService {
 	}
 
 
+	// 게시물 출력
 	@Override
 	public Map<String, Object> selectBoardOne(int no) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("boardMapper.selectBoardOne", no);
+	}
+
+
+	@Override
+	public int updateBoardHit(int no) {
+		return sqlSession.update("boardMapper.updateBoardHit", no);
 	}
 		
 }

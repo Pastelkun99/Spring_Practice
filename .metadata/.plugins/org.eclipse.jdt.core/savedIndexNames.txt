@@ -45,7 +45,6 @@ INDEX VERSION 1.131+C:\Users\User\Documents\workspace-sts-3.9.9.RELEASE\.metadat
 3487070168.index
 2092941299.index
 376540517.index
-893393417.index
 1696214241.index
 2908747524.index
 3173294790.index

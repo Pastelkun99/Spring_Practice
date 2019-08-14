@@ -6,7 +6,6 @@ INDEX VERSION 1.4+C:\Users\User\Documents\workspace-sts-3.9.9.RELEASE\.metadata\
 2487545169.index
 3116447309.index
 1206470954.index
-716130623.index
 2051705981.index
 3247312595.index
 1217274939.index

@@ -23,6 +23,7 @@ public class BoardController {
 	//127.0.0.1:8080/web/board.do
 	@RequestMapping(value = "/board.do", method = RequestMethod.GET)
 	public String boardlist(Model model) {
+		//Model은 어떠한 값을 담아 보내주고자 할때 사용한다.
 		
 		// DB에서 목록을 가져옴
 		List<Map<String, Object>> list = bDAO.selectBoardList();
@@ -32,9 +33,16 @@ public class BoardController {
 		return "board";
 	}
 	
+	
+	// 이 메소드를 잘 보자. 각 객체의 메소드와 그 반환값, parameter를 잘 봐라
 	//127.0.0.1:8080/web/boardc.do
 	@RequestMapping(value = "/boardc.do", method = RequestMethod.GET)
-	public String boardcontent() {
+	public String boardcontent(@RequestParam("no") int no, Model model) {
+		// 다음 url에 전달해줄 때 Model 객체가 필요하다.
+		Map<String, Object> map = new HashMap<String, Object>();
+		map = bDAO.selectBoardOne(no);
+		int result = bDAO.updateBoardHit(no);
+		model.addAttribute("content", map);
 		return "boardc";
 	}
 	
