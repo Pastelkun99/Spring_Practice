@@ -26,8 +26,7 @@ public class BoardDAO implements BoardService {
 
 	@Override
 	public int updateBoardOne(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update("boardMapper.updateBoardOne", map);
 	}
 
 
@@ -47,6 +46,24 @@ public class BoardDAO implements BoardService {
 	@Override
 	public int updateBoardHit(int no) {
 		return sqlSession.update("boardMapper.updateBoardHit", no);
+	}
+
+
+	@Override
+	public int selectBoardPrev(int no) {
+		return sqlSession.selectOne("boardMapper.selectBoardPrev", no);
+	}
+
+
+	@Override
+	public int selectBoardNext(int no) {
+		return sqlSession.selectOne("boardMapper.selectBoardNext", no);
+	}
+
+
+	@Override
+	public int deleteBoardOne(int no) {
+		return sqlSession.delete("boardMapper.deleteBoardOne", no);
 	}
 		
 }

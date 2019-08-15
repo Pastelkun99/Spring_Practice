@@ -33,6 +33,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
+		<!-- Json포맷으로 변경 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+		    <artifactId>jackson-jaxrs-base</artifactId>
+		    <version>2.4.4</version>
+		</dependency>
+		
 		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis</artifactId>

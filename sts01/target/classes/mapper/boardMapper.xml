@@ -8,7 +8,15 @@
 	</insert>
 	
 	<select id="selectBoardList" resultType="map">
-		SELECT * FROM BOARD
+		SELECT 
+			BRD_NO,
+			BRD_TITLE,
+			BRD_WRITER,
+			BRD_HIT,
+			BRD_DATE
+		 FROM 
+		 	BOARD
+		 ORDER BY BRD_NO DESC
 		<!-- map 타입으로 반환 -->
 	</select>
 	
@@ -16,12 +24,38 @@
 		<result property="BRD_CONTENT" column="BRD_CONTENT" jdbcType="CLOB" javaType="java.lang.String"/>
 	</resultMap>
 	<select id="selectBoardOne" parameterType="int" resultMap="result1">
+	<!-- result1 로 반환 한 뒤, 위의 코드에서 정제 작업을 거친다. -->
 		SELECT * FROM BOARD WHERE BRD_NO = #{no}
 		<!-- 이전 Controller에서 받아온 변수를 그대로 사용한다. parametertype은 그 변수의 타입을 의미함. -->
 	</select>
 	
 	<update id="updateBoardHit" parameterType="int">
 		UPDATE BOARD SET BRD_HIT = BRD_HIT + 1 WHERE BRD_NO = #{no}
+	</update>
+	
+	<select id="selectBoardPrev" parameterType="int" resultType="int">
+		<![CDATA[
+			SELECT NVL(MAX(BRD_NO),0) FROM BOARD WHERE BRD_NO < #{no}
+		]]>
+	</select>
+	
+	<select id="selectBoardNext" parameterType="int" resultType="int">
+		<![CDATA[
+			SELECT NVL(MIN(BRD_NO),0) FROM BOARD WHERE BRD_NO > #{no}
+		]]>
+	</select>
+	
+	<delete id="deleteBoardOne" parameterType="int">
+		DELETE FROM BOARD WHERE BRD_NO = #{no}
+	</delete>
+	
+	<!-- updateBoardOne은 들어오는 타입이 map이다.. -->
+	<update id="updateBoardOne" parameterType="map">
+		UPDATE BOARD SET BRD_TITLE = #{title}, 
+						 BRD_CONTENT = #{content},
+						 BRD_WRITER = #{writer} 
+					WHERE 
+						 BRD_NO = #{no}
 	</update>
 	
 </mapper>

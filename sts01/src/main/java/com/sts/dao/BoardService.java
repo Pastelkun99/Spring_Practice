@@ -14,4 +14,11 @@ public interface BoardService {
 	public int insertBoardOne(Map<String, Object> map); //게시물 글쓰기
 	
 	public int updateBoardHit(int no); 	// 글번호가 넘어가면 조회수 1 증가
+	
+	public int selectBoardPrev(int no); // 이전 글
+	
+	public int selectBoardNext(int no); // 다음 글
+	
+	public int deleteBoardOne(int no); // 글 삭제
+	
 }
