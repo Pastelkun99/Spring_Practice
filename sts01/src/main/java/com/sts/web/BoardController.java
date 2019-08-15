@@ -42,8 +42,7 @@ public class BoardController {
 	// 이 메소드를 잘 보자. 각 객체의 메소드와 그 반환값, parameter를 잘 봐라
 	//127.0.0.1:8080/web/boardc.do
 	@RequestMapping(value = "/boardc.do", method = RequestMethod.GET)
-	public String boardcontent(@RequestParam("no") int no, Model model,
-			HttpSession httpSession) {
+	public String boardcontent(@RequestParam("no") int no, Model model, HttpSession httpSession) {
 		
 		// 세션에서 값 꺼내기
 		int chk = (Integer)httpSession.getAttribute("BRD_HIT_CHECK");
@@ -88,14 +87,11 @@ public class BoardController {
 		// insert, delete, update -> return 값은 (0 or 1),
 		// select 는 결과값이 0또는 1이 아니다.
 		
-		
 		// map 또는 VO 사용
 		Map<String, Object> map = new HashMap<String, Object>();
-		
 		map.put("TI", a);
 		map.put("CO", b);
 		map.put("WR", c);
-		
 		int ret = bDAO.insertBoardOne(map);
 		
 		return "redirect:board.do";
@@ -110,11 +106,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/boarde.do", method = RequestMethod.POST)
-	public String boardeditnow(@RequestParam("title") String title,
-								@RequestParam("content") String content,
-								@RequestParam("writer") String writer,
-								@RequestParam("no") int no) 
-	{
+	public String boardeditnow(@RequestParam("title") String title, @RequestParam("content") String content,
+								@RequestParam("writer") String writer, @RequestParam("no") int no) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("no", no);
 		map.put("title", title);
