@@ -17,6 +17,24 @@
 
 	<c:if test="${param.menu == 1 }">
 		<h5>회원관리</h5>
+		<table border="1">
+		<th>이미지</th>
+		<th>아이디</th>
+		<th>비밀번호</th>
+		<th>이름</th>
+		<th>나이</th>
+		<th>생성일자</th>
+		<c:forEach var="mem" items="${list}">
+			<tr>
+				<td><img src="memberimg.do?id=${mem.mem_id }" width="50px" height="50px"/></td>
+				<td>${mem.mem_id }</td>
+				<td>${mem.mem_pw }</td>
+				<td>${mem.mem_name }</td>
+				<td>${mem.mem_age }</td>
+				<td>${mem.mem_date }</td>
+			</tr>		
+		</c:forEach>
+	</table>
 	</c:if>
 	<c:if test="${param.menu == 2 }">
 		<h5>게시물관리</h5>
