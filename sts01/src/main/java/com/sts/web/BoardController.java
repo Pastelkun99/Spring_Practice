@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sts.dao.BoardService;
 
 @Controller
+// 원래는 이렇게 잡아야 관리가 편하다. @RequestMapping("/brd")
 public class BoardController {
 	
 	// @autowired DAO 객체 생성

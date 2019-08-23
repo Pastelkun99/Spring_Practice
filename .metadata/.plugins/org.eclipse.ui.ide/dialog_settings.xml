@@ -79,6 +79,7 @@
 		<item value="org.eclipse.wst.xml_ui.feature:3.14.0.v201905291408"/>
 		<item value="org.eclipse.wst.xsl.feature:1.3.600.v201904282210"/>
 		<item value="org.eclipse.zest:1.7.0.201606061308"/>
+		<item value="org.insightech.er.feature:1.0.0.v20150619-0219"/>
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
 		<item value="org.sonatype.m2e.buildhelper.feature:0.15.0.201207090124"/>
 		<item value="org.sonatype.m2e.egit.feature:0.15.1.201806191431"/>
@@ -103,6 +104,7 @@
 		<item value="org.springsource.sts:3.9.9.201906181741-RELEASE"/>
 	</list>
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\User\Desktop\MiniProject\note"/>
 		<item value="C:\Users\User\Documents\nodejs-workspace\exp1"/>
 	</list>
 	<section name="ChooseWorkspaceDialogSettings">

@@ -27,6 +27,7 @@
 	
 	<context:component-scan base-package="com.sts.web" />
 	<context:component-scan base-package="com.sts.dao" />
+	<context:component-scan base-package="com.sts.shop" />
 	
 	
 	

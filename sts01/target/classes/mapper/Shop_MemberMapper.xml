@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"HTTP://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="Shop_Member">
+
+	<insert id="insertMemberOne" parameterType="map">
+		INSERT INTO SHOP_MEMBER VALUES ( #{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_addr}, SYSDATE, #{mem_grade})
+	</insert>
+	
+	
+	<insert id="insertMemberOneVo" parameterType="com.sts.vo.Shop_Member">
+		INSERT INTO SHOP_MEMBER VALUES ( #{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_addr}, SYSDATE, #{mem_grade})
+	</insert>
+	
+	<select id="selectMemberLogin" parameterType="map" resultType="map">
+		SELECT MEM_ID, MEM_NAME FROM SHOP_MEMBER WHERE MEM_ID= #{userName} AND MEM_PW= #{userPassword}
+	</select>
+	
+	<select id="selectMemberList" resultType="map">
+		SELECT * FROM SHOP_MEMBER
+	</select>
+</mapper>

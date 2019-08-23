@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"HTTP://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="Shop_Item">
+	<select id="selectItemNo" resultType="int">
+		SELECT NVL( MAX(ITM_NO), 0 ) FROM SHOP_ITEM
+	</select>
+	
+	<select id="insertItemBatch" parameterType="list">
+		INSERT ALL
+			<foreach collection="list" item="vo" separator=" ">
+			INTO SHOP_ITEM(ITM_NO, ITM_NAME, ITM_CONTENT, ITM_PRICE, ITM_QTY, ITM_DATE)
+			VALUES(#{vo.itm_no}, #{vo.itm_name}, #{vo.itm_content}, #{vo.itm_price}, #{vo.itm_qty}, SYSDATE)	
+			</foreach>
+			SELECT * FROM DUAL
+	</select>
+	
+	<select id="selectItemList" resultType="com.sts.vo.ShopItemVO">
+		SELECT * FROM SHOP_ITEM ORDER BY ITM_NO DESC
+	</select>
+	
+	<delete id="deleteItemBatch" parameterType="int">
+		<!-- 들어오는건 배열, 사용할 것은 no -->
+		<foreach open="DELETE FROM SHOP_ITEM WHERE ITM_NO IN("
+			collection="array" item="no" separator="," close=")">
+			${no}
+		</foreach>
+	</delete>
+	
+	<update id="updateItemBatch" parameterType="list">
+		UPDATE SHOP_ITEM SET
+			ITM_NAME = (CASE ITM_NO
+				<foreach collection="list" item="vo" separator=" ">
+					WHEN #{vo.itm_no} THEN #{vo.itm_name}
+				</foreach>
+			END),
+			ITM_CONTENT = (CASE ITM_NO
+				<foreach collection="list" item="vo" separator=" ">
+				WHEN #{vo.itm_no} THEN #{vo.itm_content}
+				</foreach>
+			END),
+			ITM_PRICE = (CASE ITM_NO
+				<foreach collection="list" item="vo" separator=" ">
+					WHEN #{vo.itm_no} THEN #{vo.itm_price}
+				</foreach>
+			END),
+			ITM_QTY = (CASE ITM_NO
+				<foreach collection="list" item="vo" separator=" ">
+					WHEN #{vo.itm_no} THEN #{vo.itm_qty}
+				</foreach>
+			END)
+		WHERE ITM_NO IN (
+			<foreach collection="list" item="vo" separator=",">
+				#{vo.itm_no}
+			</foreach>
+		)
+	</update>
+</mapper>

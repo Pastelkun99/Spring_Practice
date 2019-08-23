@@ -80,4 +80,5 @@ public class MemberController {
 	public String update(Model model, HttpSession httpSession) {
 		return "";
 	}
+	
 }
