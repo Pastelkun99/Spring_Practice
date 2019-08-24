@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="true" pageEncoding="UTF-8"%>
-<jsp:include page="bootstrap.jsp"></jsp:include>
 <html>
 <head>
-	<title>Home</title>
+<jsp:include page="bootstrap.jsp"></jsp:include>
+<!-- <link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+<title>Remembrance Project</title>
 </head>
 <body>
-	<c:if test="${sessionScope.login_check eq null }">
-		<a href="login.do">로그인 화면으로</a>
-	</c:if>
+	<jsp:include page="navigation.jsp"></jsp:include>
 	
-	<c:if test="${sessionScope.login_check ne null }">
-		${sessionScope.login_check } 님 안녕하세요!
-		<a href="main.do">단어장</a>
-		<br/>
-	</c:if>
+	
 </body>
 </html>

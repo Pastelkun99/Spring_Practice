@@ -25,4 +25,26 @@ public class UserServiceimplement implements UserService{
 		return sqlSession.selectOne("userMapper.selectUserLogin", user);
 	}
 
+	@Override
+	public User selectUserOne(User user) {
+		//System.out.println("서비스 객체에서의 user : " + user.toString());
+		return sqlSession.selectOne("userMapper.selectUserOne", user);
+	}
+
+	@Override
+	public User selectUserAll(String id) {
+		return sqlSession.selectOne("userMapper.selectUserAll", id);
+	}
+
+	@Override
+	public int updateUserOne(User user) {
+		return sqlSession.update("userMapper.updateUserOne", user);
+	}
+
+	@Override
+	public int deleteUserOne(String id) {
+		return sqlSession.delete("userMapper.deleteUserOne", id);
+	}
+
+
 }

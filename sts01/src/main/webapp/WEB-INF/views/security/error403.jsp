@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>접근불가</title>
 </head>
+
 <body>
-	<script>alert('로그인에 실패하였습니다!');</script>
-	<script>history.back();</script>
+	접근할 수 없는 페이지입니다.
+	<a href="${pageContext.request.contextPath }/main1.do">메인으로</a>
 </body>
 </html>

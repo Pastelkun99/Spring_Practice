@@ -10,8 +10,8 @@
 	<!-- bean, mybatis, context를 체크한 것 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
-		<property name="username" value="system" />
+		<property name="url" value="jdbc:oracle:thin:@1.234.5.158:1527:xe" />
+		<property name="username" value="myword" />
 		<property name="password" value="123456" />
 	</bean>
 

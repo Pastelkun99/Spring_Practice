@@ -11,4 +11,21 @@
 	<select id="selectUserLogin" parameterType="com.project.dao.User" resultType="com.project.dao.User">
 		SELECT USER_ID, USER_PW FROM USER_TBL WHERE USER_ID = #{user_id} AND USER_PW= #{user_pw}
 	</select>
+	
+	<select id="selectUserOne" parameterType="com.project.dao.User" resultType="com.project.dao.User">
+		SELECT USER_ID, USER_PW, USER_MOTTO FROM USER_TBL WHERE USER_ID = #{user_id}
+	</select>
+	
+	<select id="selectUserAll" parameterType="string" resultType="com.project.dao.User">
+		SELECT * FROM USER_TBL WHERE USER_ID = #{user_id}
+	</select>
+	
+	<update id="updateUserOne" parameterType="com.project.dao.User">
+		UPDATE USER_TBL SET USER_PW = #{user_pw}, USER_MOTTO = #{user_motto} WHERE USER_ID = #{user_id}
+	</update>
+	
+	<delete id="deleteUserOne" parameterType="string">
+		DELETE FROM USER_TBL WHERE USER_ID = #{user_id}
+	</delete>
+	
 </mapper>
